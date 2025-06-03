@@ -1,12 +1,12 @@
 import { Logo } from "@/once-ui/components";
 
 const person = {
-  firstName: "Logicode",
-  lastName: "On",
+  firstName: "Andrés",
+  lastName: "Andrade",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Full Stack Developer",
   avatar: "/images/avatar.jpg",
   email: "andres.andrade@gmail.com",
   location: "America/Winnipeg", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -15,11 +15,10 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Send me a messeage </>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+What I Can Do for Your Business
     </>
   ),
 };
@@ -55,7 +54,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Smart solutions, built around your business</>,
+  headline: <>I’m Andrés Andrade, Full Stack Developer .</>,
   featured: {
     display: true,
     title: <>Recent project: <strong className="ml-4">Accident report</strong></>,
@@ -63,8 +62,9 @@ const home = {
   },
   subline: (
     <>
-      We are Logicodeon, a team with over 10 years of experience in software development. Our solutions 
-      <br /> are crafted to solve your company's core challenges.
+    I don’t just code — I listen, understand, and design solutions that actually make sense. I move confidently across both frontend and backend, and my background in industrial electromechanics helps me better grasp real-world company processes and needs.
+
+<br/>Currently based in Canada and open to new opportunities where I can bring value, insight, and energy to the table.
     </>
   ),
 };
@@ -90,9 +90,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+       Andrés is a Canada-based Full Stack Developer with a passion for turning complex challenges into simple, effective digital solutions. His work spans web applications, mobile experiences, and the intersection of development and technology.
       </>
     ),
   },
@@ -101,18 +99,19 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Challenger Sweepers Winnipeg",
+        timeframe: "2024 - Present",
+        role: "Mechanical Technician",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+
+
+                    <>
+                    Assembly and quality inspection of mechanical components using blueprints
+                              </>,
+                              <>
+                              Operation of manual, electric, and hydraulic tools
+                              </>,
+                              <>nventory control and warehouse management</>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -125,16 +124,15 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Codelco Chile",
+        timeframe: "Nov 2022 – Sept 2024",
+        role: "Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+Designed and developed custom software solutions to optimize workflow.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
+            Modeled databases and designed transactional systems to ensure data integrity.
             in overall company revenue.
           </>,
         ],
@@ -142,12 +140,16 @@ const about = {
       },
     ],
   },
+
+
+ 
+
   studies: {
     display: true, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
+        name: "Universidad Teconologica",
         description: <>Studied software engineering.</>,
       },
       {
