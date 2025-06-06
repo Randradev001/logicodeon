@@ -1,46 +1,66 @@
-import { Column, Heading } from "@/once-ui/components";
-import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
-import { baseURL } from "@/app/resources";
-import { blog, person, newsletter } from "@/app/resources/content";
-import { Meta, Schema } from "@/once-ui/modules";
+import { Column, Card, Text, Flex, Heading } from "@/once-ui/components";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: blog.title,
-    description: blog.description,
-    baseURL: baseURL,
-    image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
-    path: blog.path,
-  });
-}
+const keyProjects = [
+  {
+    title: "Codelco Chile – Corrective Actions System",
+    description:
+      "Captures mining incidents and intelligently manages corrective actions, sending weekly reports and ensuring continuous improvement.",
+  },
+  {
+    title: "Drilling Bar Control",
+    description:
+      "Manages precision drilling bars used in explosives; ensures exhaustive traceability and safety.",
+  },
+  {
+    title: "High Voltage Infrastructure Management",
+    description:
+      "Controls maintenance and safety protocols for high-voltage panels in industrial facilities.",
+  },
+  {
+    title: "Effective Time Management (Mining)",
+    description:
+      "Tracks productive hours per division in mining, improving transparency and efficiency.",
+  },
+  {
+    title: "Automation & Industrial Control",
+    description:
+      "Export system that supervises a full production line in an industrial setting.",
+  },
+  {
+    title: "Educational Performance Platform",
+    description:
+      "Evaluates over 60,000 students; includes dashboards and Power BI integration.",
+  },
+  {
+    title: "Truck Entry & Loading Time Control",
+    description:
+      "Tracks truck activity and loading dock scheduling in industrial plants.",
+  },
+  {
+    title: "Web Design & SEO for SMEs",
+    description:
+      "Complete websites and brand launches focused on digital presence and growth.",
+  },
+];
 
-export default function Blog() {
+export default function KeyProjects() {
   return (
-    <Column maxWidth="s">
-      <Schema
-        as="blog"
-        baseURL={baseURL}
-        title={blog.title}
-        description={blog.description}
-        path={blog.path}
-        image={`${baseURL}/og?title=${encodeURIComponent(blog.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}/blog`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <Heading marginBottom="l" variant="display-strong-s">
-        {blog.title}
-      </Heading>
-      <Column
-				fillWidth flex={1}>
-				<Posts range={[1,1]} thumbnail direction="column"/>
-				<Posts range={[2,3]} thumbnail/>
-				<Posts range={[4]} columns="2"/>
-			</Column>
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
-    </Column>
+<Column align="center" gap="l" marginTop="xl" maxWidth="l">
+  <Heading variant="display-strong-s">
+    Key Projects
+  </Heading>
+  <Column gap="m">
+    {keyProjects.map((project, index) => (
+      <Card key={index} padding="l" shadow="m" >
+        <Column gap="s">
+          <Text >{project.title}</Text>
+          <Text >{project.description}</Text>
+        </Column>
+      </Card>
+    ))}
+  </Column>
+</Column>
+
+
   );
 }

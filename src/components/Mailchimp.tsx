@@ -24,6 +24,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
 
+
   const validateEmail = (email: string): boolean => {
     if (email === "") {
       return true;
@@ -141,6 +142,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             label="Email"
             required
             onChange={(e) => {
+              setEmail(e.target.value);
               if (error) {
                 handleChange(e);
               } else {
@@ -174,11 +176,18 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             />
           </div>
           <div className="clear">
-            <Flex height="48" vertical="center">
+          <Flex height="48" vertical="center">
+            <a
+               href={`https://wa.me/14319973009?text=${encodeURIComponent(`Hi! I would like to get in touch. My email is: ${email}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
               <Button id="mc-embedded-subscribe" value="Contact" size="m" fillWidth>
-              Speack
+                Let’s talk
               </Button>
-            </Flex>
+            </a>
+          </Flex>
           </div>
         </Flex>
       </form>

@@ -102,6 +102,7 @@ const Carousel: React.FC<CarouselProps> = ({
           }}
         />
       </RevealFx>
+      
       {images.length > 1 && (
         <>
           {indicator === "line" ? (

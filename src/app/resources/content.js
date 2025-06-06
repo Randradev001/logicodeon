@@ -15,7 +15,7 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Send me a messeage </>,
+  title: <>Feel free to send me a message.</>,
   description: (
     <>
 What I Can Do for Your Business
@@ -106,17 +106,19 @@ const about = {
 
 
                     <>
-                    Assembly and quality inspection of mechanical components using blueprints
+                   Assembly and quality inspection of mechanical components using blueprints
                               </>,
                               <>
-                              Operation of manual, electric, and hydraulic tools
+                             Operation of manual, electric, and hydraulic tools
                               </>,
-                              <>nventory control and warehouse management</>
+                              <>Troubleshooting and maintenance of mechanical systems</>,
+                              <>Inventory control and warehouse management</>,
+                     
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/odra.jpg",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -124,19 +126,103 @@ const about = {
         ],
       },
       {
-        company: "Codelco Chile",
+        company: "J.E.J Engineering - Codelco Chile",
         timeframe: "Nov 2022 – Sept 2024",
         role: "Software Engineer",
         achievements: [
           <>
-Designed and developed custom software solutions to optimize workflow.
+            Designed and developed custom software solutions to optimize workflow
           </>,
           <>
-            Modeled databases and designed transactional systems to ensure data integrity.
-            in overall company revenue.
+            Modeled databases and designed transactional systems to ensure data integrity
           </>,
+          <>
+            Modeled databases and designed transactional systems to ensure data integrity
+          </>,
+                 
         ],
-        images: [],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/codelco.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Apinformatica",
+        timeframe: "Nov 2022 – Sept 2024",
+        role: "Developer Manager",
+        achievements: [
+          <>
+            Led project evaluations, managed development timelines, and supervised software development
+          </>,
+          <>
+            Developed software using Genexus 17 and managed testing environments
+          </>,
+          <>
+            Trained end-users on newly developed systems and tools
+          </>,
+                 
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/apinformatica.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 12,
+          },
+        ],
+      },
+      {
+        company: "Strategic Educational Foundation",
+        timeframe: "Nov 2022 – Sept 2024",
+        role: "Senior Developer",
+        achievements: [
+          <>
+            Designed and developed custom software solutions to optimize workflow
+          </>,
+          <>
+            Modeled databases and designed transactional systems to ensure data integrity
+          </>,
+          <>
+            Modeled databases and designed transactional systems to ensure data integrity
+          </>,
+                 
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/as.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Software Developer",
+        timeframe: "Nov 2022 – Sept 2024",
+        role: "Apinformatica",
+        achievements: [
+          <>
+            Developed web-based applications and designed databases to support client needs
+          </>,
+          
+                 
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/apinformatica.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 12,
+          },
+        ],
       },
     ],
   },
@@ -163,8 +249,35 @@ Designed and developed custom software solutions to optimize workflow.
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Languages & Frameworks",
+        description: <>React.js, Node.js, HTML, CSS, JavaScript, React Native, Genexus, C#, VB, .NET., next.js, vercel, tamagui</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          
+        ],
+      },
+      {
+        title: "Database Systems",
+        description: <>MySQL, SQL Server, Oracle, Transactional Design, Database Modeling.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/bd.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Tools & Platforms",
+        description: <>GitHub, Jira, Power BI, Windows Server, Excel</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -173,8 +286,15 @@ Designed and developed custom software solutions to optimize workflow.
             width: 16,
             height: 9,
           },
+        ],
+      },
+      {
+        title: "Other Technologies",
+        description: <>WordPress (learning), WooCommerce, API Integrations, SEO, Google Analytics</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
           {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/images/projects/project-01/wp.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -182,26 +302,19 @@ Designed and developed custom software solutions to optimize workflow.
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Languages ",
+        description: <>Spanish (Fluent), English (Intermediate, A2 – Currently enrolled in advanced course)</>,
+        
       },
+    
     ],
   },
 };
 
 const blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
+  label: "Projects",
+  title: "last projects",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route

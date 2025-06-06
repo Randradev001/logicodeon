@@ -78,6 +78,7 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
     };
 
     return (
+      
       <Flex
         fillWidth
         horizontal="center"
@@ -88,6 +89,7 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
       >
         {children}
       </Flex>
+      
     );
   },
 );
