@@ -30,6 +30,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
       as="html"
       lang="es"
+      data-scroll-behavior="smooth"
       background="page"
       data-neutral={style.neutral}
       data-brand={style.brand}

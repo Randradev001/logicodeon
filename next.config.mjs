@@ -1,4 +1,8 @@
 import mdx from "@next/mdx";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -9,8 +13,8 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
-  eslint: {
-    ignoreDuringBuilds: true,
+  turbopack: {
+    root: projectRoot,
   },
   sassOptions: {
     compiler: "modern",

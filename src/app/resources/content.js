@@ -108,9 +108,9 @@ const about = {
         timeframe: "",
         role: "Software Engineer",
         achievements: [
-          <>Desarrollo de plataformas operacionales para minería, seguridad y trazabilidad.</>,
-          <>Automatización de reportes, correos y flujos de seguimiento preventivo.</>,
-          <>Participación en proyecto reconocido con Segundo Lugar Innovación Codelco Chile 2024.</>,
+          "Desarrollo de plataformas operacionales para minería, seguridad y trazabilidad.",
+          "Automatización de reportes, correos y flujos de seguimiento preventivo.",
+          "Participación en proyecto reconocido con Segundo Lugar Innovación Codelco Chile 2024.",
         ],
         tags: ["Mining", "React", "Node.js", "SQL Server", "Power BI"],
         images: [
@@ -127,9 +127,9 @@ const about = {
         timeframe: "",
         role: "Full Stack Developer",
         achievements: [
-          <>Construcción de sistemas para RR.HH., seguridad laboral, logística y operación industrial.</>,
-          <>Diseño de bases de datos y aplicaciones para procesos usados en operación.</>,
-          <>Trazabilidad de beneficios, ropa de trabajo, andenes, accesos y competencias laborales.</>,
+          "Construcción de sistemas para RR.HH., seguridad laboral, logística y operación industrial.",
+          "Diseño de bases de datos y aplicaciones para procesos usados en operación.",
+          "Trazabilidad de beneficios, ropa de trabajo, andenes, accesos y competencias laborales.",
         ],
         tags: ["HR", "Logistics", ".NET", "SQL Server"],
         images: [
@@ -146,9 +146,9 @@ const about = {
         timeframe: "",
         role: "Senior Developer",
         achievements: [
-          <>Desarrollo de plataformas para evaluación docente, ensayos SIMCE/PME y encuestas digitales.</>,
-          <>Automatización de informes PDF, envíos por email, SMS y reportes históricos.</>,
-          <>Modelado de datos para seguimiento académico y análisis en Power BI.</>,
+          "Desarrollo de plataformas para evaluación docente, ensayos SIMCE/PME y encuestas digitales.",
+          "Automatización de informes PDF, envíos por email, SMS y reportes históricos.",
+          "Modelado de datos para seguimiento académico y análisis en Power BI.",
         ],
         tags: ["Education", "Power BI", "PDF", "SMS", "Email"],
         images: [
@@ -165,9 +165,9 @@ const about = {
         timeframe: "",
         role: "Developer Manager / Full Stack Developer",
         achievements: [
-          <>Evaluación, planificación y desarrollo de soluciones empresariales con GeneXus.</>,
-          <>Trabajo en plataforma de documentos electrónicos SII, CAF, XML y DTE.</>,
-          <>Coordinación de pruebas, ambientes y soporte a usuarios finales.</>,
+          "Evaluación, planificación y desarrollo de soluciones empresariales con GeneXus.",
+          "Trabajo en plataforma de documentos electrónicos SII, CAF, XML y DTE.",
+          "Coordinación de pruebas, ambientes y soporte a usuarios finales.",
         ],
         tags: ["GeneXus", "SQL Server", "SII", "DTE"],
         images: [
@@ -184,9 +184,9 @@ const about = {
         timeframe: "",
         role: "Full Stack Developer",
         achievements: [
-          <>Integración de sistemas productivos con PLC y SQL Server.</>,
-          <>Control de líneas de packing, etiquetas, pesos y conteo de botellas.</>,
-          <>Desarrollo de soluciones para agroindustria y manufactura.</>,
+          "Integración de sistemas productivos con PLC y SQL Server.",
+          "Control de líneas de packing, etiquetas, pesos y conteo de botellas.",
+          "Desarrollo de soluciones para agroindustria y manufactura.",
         ],
         tags: ["Agribusiness", "Manufacturing", "PLC Integration", "SQL Server"],
         images: [
@@ -203,9 +203,9 @@ const about = {
         timeframe: "",
         role: "Software, operaciones y mejora de procesos",
         achievements: [
-          <>Experiencia laboral internacional en Canadá y adaptación a entornos multiculturales.</>,
-          <>Diseño conceptual de soluciones para mantenimiento hotelero y control de actividades de ensamblaje.</>,
-          <>Aplicación de mirada técnica y operacional sobre procesos industriales reales.</>,
+          "Experiencia laboral internacional en Canadá y adaptación a entornos multiculturales.",
+          "Diseño conceptual de soluciones para mantenimiento hotelero y control de actividades de ensamblaje.",
+          "Aplicación de mirada técnica y operacional sobre procesos industriales reales.",
         ],
         tags: ["Canada", "Hospitality", "Manufacturing", "Operations"],
         images: [

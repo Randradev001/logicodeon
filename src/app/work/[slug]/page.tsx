@@ -1,17 +1,11 @@
 import { redirect } from "next/navigation";
 
-import { getPosts } from "@/app/utils/utils";
 import { projects } from "@/data/projects";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const legacyPosts = getPosts(["src", "app", "work", "projects"]).map((post) => ({
-    slug: post.slug,
-  }));
-  const projectRoutes = projects.map((project) => ({
+  return projects.map((project) => ({
     slug: project.id,
   }));
-
-  return [...legacyPosts, ...projectRoutes];
 }
 
 export default async function LegacyWorkProject({
