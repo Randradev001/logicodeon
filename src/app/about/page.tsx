@@ -16,6 +16,22 @@ import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
 import React from "react";
 import { Meta, Schema } from "@/once-ui/modules";
+import { DownloadCV } from "@/components/DownloadCV";
+import { Timeline } from "@/components/Timeline";
+
+const keywords = [
+  "Full Stack Developer",
+  "Software Engineer",
+  "React Developer",
+  "Node.js",
+  "SQL Server",
+  "GeneXus",
+  "Power BI",
+  "Mining Software",
+  "Enterprise Software",
+  "Chile",
+  "Canada",
+];
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -24,6 +40,7 @@ export async function generateMetadata() {
     baseURL: baseURL,
     image: `${baseURL}/og?title=${encodeURIComponent(about.title)}`,
     path: about.path,
+    keywords,
   });
 }
 
@@ -181,6 +198,7 @@ export default function About() {
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               {about.intro.description}
+              <DownloadCV compact />
             </Column>
           )}
 
@@ -190,58 +208,15 @@ export default function About() {
                 {about.work.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={`${experience.company}-${index}`}
-                        >
-                          {achievement}
-                        </Text>
-                      ))}
-                    </Column>
-                    {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
-                        {experience.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <SmartImage
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
-                  </Column>
-                ))}
+                <Timeline
+                  items={about.work.experiences.map((experience) => ({
+                    title: experience.company,
+                    subtitle: experience.role,
+                    period: experience.timeframe,
+                    bullets: experience.achievements,
+                    tags: experience.tags,
+                  }))}
+                />
               </Column>
             </>
           )}

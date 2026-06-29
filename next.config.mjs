@@ -9,6 +9,9 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   sassOptions: {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],

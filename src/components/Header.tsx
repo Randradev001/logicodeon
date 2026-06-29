@@ -45,6 +45,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const projectsSelected = pathname.startsWith(work.path) || pathname.startsWith("/work");
 
   return (
     <>
@@ -96,24 +97,24 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes["/work"] && (
+              {routes["/projects"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/work"
+                    href={work.path}
                     label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    selected={projectsSelected}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
+                    href={work.path}
+                    selected={projectsSelected}
                   />
                 </>
               )}
-              {routes["/blog"] && (
+              {routes["/blog"] && blog.display !== false && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -164,7 +165,9 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex hide="s">
+              {display.time && <TimeDisplay timeZone={person.timeZone || person.location} />}
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

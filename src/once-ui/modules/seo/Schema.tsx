@@ -41,9 +41,12 @@ export function Schema({
 }: SchemaProps) {
   const normalizedBaseURL = baseURL.endsWith("/") ? baseURL.slice(0, -1) : baseURL;
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const isFullUrl = (url: string) => /^https?:\/\//.test(url);
 
   const imageUrl = image
-    ? `${normalizedBaseURL}${image.startsWith("/") ? image : `/${image}`}`
+    ? isFullUrl(image)
+      ? image
+      : `${normalizedBaseURL}${image.startsWith("/") ? image : `/${image}`}`
     : `${normalizedBaseURL}/og?title=${encodeURIComponent(title)}`;
 
   const url = `${normalizedBaseURL}${normalizedPath}`;
@@ -56,7 +59,7 @@ export function Schema({
     url,
   };
   
-  schema.sameAs = Object.values(social).filter(Boolean)
+  schema.sameAs = social.map((item) => item.link).filter(Boolean);
 
   if (as === "website") {
     schema.name = title;

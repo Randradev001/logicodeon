@@ -1,4 +1,4 @@
-import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components";
+import { Flex, IconButton, Text } from "@/once-ui/components";
 import { person, social } from "@/app/resources/content";
 import styles from "./Footer.module.scss";
 
@@ -6,13 +6,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Flex
-      as="footer"
-      fillWidth
-      padding="8"
-      horizontal="center"
-      mobileDirection="column"
-    >
+    <Flex as="footer" fillWidth padding="8" horizontal="center" mobileDirection="column">
       <Flex
         className={styles.mobile}
         maxWidth="m"
@@ -25,17 +19,6 @@ export const Footer = () => {
         <Text variant="body-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
-        {/*
-        <Text onBackground="neutral-weak">
-           
-            / Build your portfolio with{" "}
-            <SmartLink
-              href="https://once-ui.com/templates/magic-portfolio"
-            >
-              Once UI
-            </SmartLink>
-          </Text>
-        */}  
         </Text>
         <Flex gap="16">
           {social.map(

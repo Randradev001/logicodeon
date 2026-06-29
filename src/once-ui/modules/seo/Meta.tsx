@@ -7,6 +7,7 @@ export interface MetaProps {
   path?: string;
   type?: "website" | "article";
   image?: string;
+  keywords?: string[];
   publishedTime?: string;
   author?: {
     name: string;
@@ -21,6 +22,7 @@ export function generateMetadata({
   path = "",
   type = "website",
   image,
+  keywords,
   publishedTime,
   author,
 }: MetaProps): NextMetadata {
@@ -59,6 +61,7 @@ export function generateMetadata({
       description,
       images: [ogImage],
     },
+    ...(keywords ? { keywords } : {}),
     ...(author ? { authors: [{ name: author.name, url: author.url }] } : {}),
   };
 }

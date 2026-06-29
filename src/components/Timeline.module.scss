@@ -1,0 +1,41 @@
+.timeline {
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  column-gap: var(--static-space-16);
+}
+
+.marker {
+  position: relative;
+  width: 1rem;
+  min-height: 100%;
+}
+
+.marker::before {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  left: calc(50% - 1px);
+  width: 1px;
+  height: calc(100% + var(--static-space-24));
+  background: var(--neutral-alpha-medium);
+}
+
+.item:last-child .marker::before {
+  display: none;
+}
+
+.dot {
+  position: absolute;
+  top: 0.35rem;
+  left: 50%;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: var(--brand-background-strong);
+  box-shadow: 0 0 0 0.25rem var(--brand-alpha-weak);
+}

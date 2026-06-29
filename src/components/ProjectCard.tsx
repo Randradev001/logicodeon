@@ -1,98 +1,87 @@
 "use client";
 
-import {
-  AvatarGroup,
-  Carousel,
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
-} from "@/once-ui/components";
+import { Project, statusLabels } from "@/data/projects";
+import { Button, Column, Flex, Heading, Tag, Text } from "@/once-ui/components";
+import { TechBadge } from "@/components/TechBadge";
 
 interface ProjectCardProps {
-  href: string;
+  project: Project;
+  compact?: boolean;
   priority?: boolean;
-  images: string[];
-  title: string;
-  content: string;
-  description: string;
-  avatars: { src: string }[];
-  link: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
-  href,
-  images = [],
-  title,
-  content,
-  description,
-  avatars,
-  link,
-}) => {
+const statusTone: Record<Project["status"], "success" | "warning" | "info"> = {
+  production: "success",
+  "in-development": "warning",
+  concept: "info",
+};
+
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, compact = false }) => {
+  const visibleTechnologies = compact
+    ? project.technologies.slice(0, 4)
+    : project.technologies.slice(0, 6);
+
   return (
-    <Column fillWidth gap="m">
-      
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        images={images.map((image) => ({
-          src: image,
-          alt: title,
-        }))}
-      />
- 
+    <Column
+      as="article"
+      fillWidth
+      gap="16"
+      padding="24"
+      radius="s"
+      border="neutral-alpha-medium"
+      background="surface"
+      shadow="s"
+      style={{ height: "100%" }}
+    >
+      <Flex fillWidth horizontal="space-between" vertical="start" gap="12" wrap>
+        <Column gap="4" flex={1}>
+          <Text variant="label-default-s" onBackground="brand-weak">
+            {project.company} · {project.country}
+          </Text>
+          <Heading as="h3" variant={compact ? "heading-strong-l" : "heading-strong-xl"}>
+            {project.title}
+          </Heading>
+        </Column>
+        <Tag size="s" variant={statusTone[project.status]}>
+          {statusLabels[project.status]}
+        </Tag>
+      </Flex>
+
+      <Flex gap="8" wrap>
+        {project.industry.map((industry) => (
+          <Tag key={industry} size="s" variant="brand">
+            {industry}
+          </Tag>
+        ))}
+      </Flex>
+
+      <Text variant="body-default-m" onBackground="neutral-weak">
+        {project.summary}
+      </Text>
+
+      {!compact && (
+        <Column gap="8">
+          <Text variant="label-strong-s">Impacto</Text>
+          <Text variant="body-default-s" onBackground="neutral-weak">
+            {project.impact}
+          </Text>
+        </Column>
+      )}
+
+      <Flex gap="8" wrap>
+        {visibleTechnologies.map((technology) => (
+          <TechBadge key={technology} label={technology} />
+        ))}
+        {project.technologies.length > visibleTechnologies.length && (
+          <Tag size="s">+{project.technologies.length - visibleTechnologies.length}</Tag>
+        )}
+      </Flex>
+
+      <Flex paddingTop="8" style={{ marginTop: "auto" }}>
+        <Button href={`/projects/${project.id}`} variant="secondary" size="s" suffixIcon="chevronRight">
+          Ver caso
+        </Button>
+      </Flex>
     </Column>
   );
 };
-
-
-{ /**
-  
-       <Flex
-        mobileDirection="column"
-        fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
-      >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
-        )}
-        { /* (avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">Read more</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
-        ) 
-          
-        </Flex>*/ }
-        

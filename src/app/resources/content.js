@@ -1,44 +1,37 @@
-import { Logo } from "@/once-ui/components";
-
 const person = {
-  firstName: "Andrés",
-  lastName: "Andrade",
+  firstName: "Remigio Andrés",
+  lastName: "Andrade Vargas",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Full Stack Developer",
+  role: "Ingeniero Informático / Full Stack Developer",
   avatar: "/images/avatar.jpg",
   email: "andres.andrade@gmail.com",
-  location: "America/Winnipeg", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
+  location: "Winnipeg, Canada",
+  timeZone: "America/Winnipeg",
+  languages: ["Español", "English"],
 };
 
 const newsletter = {
   display: true,
-  title: <>Feel free to send me a message.</>,
+  title: <>Hablemos de software empresarial.</>,
   description: (
     <>
-What I Can Do for Your Business
+      Disponible para conversar sobre desarrollo full stack, integración de sistemas,
+      automatización de procesos y plataformas operacionales.
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
     link: "",
   },
   {
@@ -52,19 +45,25 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>I’m Andrés Andrade, Full Stack Developer .</>,
+  title: `${person.name} | Full Stack Developer y Software Engineer`,
+  description:
+    "Career Hub profesional de Remigio Andrés Andrade Vargas, Full Stack Developer con más de 10 años de experiencia en software empresarial, minería, educación, industria, SQL Server, GeneXus, React, Node.js, .NET y Power BI.",
+  headline: <>Full Stack Developer para software empresarial, integración y datos.</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Accident report</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: (
+      <>
+        Proyecto destacado: <strong className="ml-4">Drill Rod Management System</strong>
+      </>
+    ),
+    href: "/projects/drill-rod-management-system",
   },
   subline: (
     <>
-    I don’t just code — I listen, understand, and design solutions that actually make sense. I move confidently across both frontend and backend, and my background in industrial electromechanics helps me better grasp real-world company processes and needs.
-
-<br/>Currently based in Canada and open to new opportunities where I can bring value, insight, and energy to the table.
+      Ingeniero Informático y Full Stack Developer con más de 10 años de experiencia
+      desarrollando soluciones empresariales para minería, educación, agroindustria,
+      manufactura e industria. Experiencia en React, Node.js, .NET, SQL Server, GeneXus,
+      Power BI, APIs REST, integración de sistemas y automatización de procesos.
     </>
   ),
 };
@@ -72,8 +71,9 @@ const home = {
 const about = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `About | ${person.name}`,
+  description:
+    "Resumen profesional de Remigio Andrés Andrade Vargas, Ingeniero Informático y Full Stack Developer con experiencia en Chile y Canadá.",
   tableOfContent: {
     display: true,
     subItems: false,
@@ -82,299 +82,235 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Resumen profesional",
     description: (
       <>
-       Andrés is a Canada-based Full Stack Developer with a passion for turning complex challenges into simple, effective digital solutions. His work spans web applications, mobile experiences, and the intersection of development and technology.
+        Ingeniero Informático y Full Stack Developer con experiencia en desarrollo de
+        plataformas empresariales, integración de sistemas, reportería ejecutiva,
+        automatización de procesos, inteligencia de negocios y soluciones operacionales.
+        Experiencia en proyectos para Agrosuper, JEJ Ingeniería/Codelco, Fundación
+        Educacional Estratégica, Apinformática, Packing La Viña, Viña Pérez Cruz y
+        experiencia internacional en Canadá.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Experiencia y foco profesional",
     experiences: [
       {
-        company: "Challenger Sweepers Winnipeg",
-        timeframe: "2024 - Present",
-        role: "Mechanical Technician",
-        achievements: [
-
-
-                    <>
-                   Assembly and quality inspection of mechanical components using blueprints
-                              </>,
-                              <>
-                             Operation of manual, electric, and hydraulic tools
-                              </>,
-                              <>Troubleshooting and maintenance of mechanical systems</>,
-                              <>Inventory control and warehouse management</>,
-                     
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/odra.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "J.E.J Engineering - Codelco Chile",
-        timeframe: "Nov 2022 – Sept 2024",
+        company: "JEJ Ingeniería / Codelco",
+        timeframe: "",
         role: "Software Engineer",
         achievements: [
-          <>
-            Designed and developed custom software solutions to optimize workflow
-          </>,
-          <>
-            Modeled databases and designed transactional systems to ensure data integrity
-          </>,
-          <>
-            Modeled databases and designed transactional systems to ensure data integrity
-          </>,
-                 
+          <>Desarrollo de plataformas operacionales para minería, seguridad y trazabilidad.</>,
+          <>Automatización de reportes, correos y flujos de seguimiento preventivo.</>,
+          <>Participación en proyecto reconocido con Segundo Lugar Innovación Codelco Chile 2024.</>,
         ],
+        tags: ["Mining", "React", "Node.js", "SQL Server", "Power BI"],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/codelco.jpg",
-            alt: "Once UI Project",
+            alt: "Codelco mining project reference",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Apinformatica",
-        timeframe: "Nov 2022 – Sept 2024",
-        role: "Developer Manager",
+        company: "Agrosuper",
+        timeframe: "",
+        role: "Full Stack Developer",
         achievements: [
-          <>
-            Led project evaluations, managed development timelines, and supervised software development
-          </>,
-          <>
-            Developed software using Genexus 17 and managed testing environments
-          </>,
-          <>
-            Trained end-users on newly developed systems and tools
-          </>,
-                 
+          <>Construcción de sistemas para RR.HH., seguridad laboral, logística y operación industrial.</>,
+          <>Diseño de bases de datos y aplicaciones para procesos usados en operación.</>,
+          <>Trazabilidad de beneficios, ropa de trabajo, andenes, accesos y competencias laborales.</>,
         ],
+        tags: ["HR", "Logistics", ".NET", "SQL Server"],
         images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/apinformatica.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 12,
-          },
-        ],
-      },
-      {
-        company: "Strategic Educational Foundation",
-        timeframe: "Nov 2022 – Sept 2024",
-        role: "Senior Developer",
-        achievements: [
-          <>
-            Designed and developed custom software solutions to optimize workflow
-          </>,
-          <>
-            Modeled databases and designed transactional systems to ensure data integrity
-          </>,
-          <>
-            Modeled databases and designed transactional systems to ensure data integrity
-          </>,
-                 
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/as.jpg",
-            alt: "Once UI Project",
+            alt: "Agrosuper project reference",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Software Developer",
-        timeframe: "Nov 2022 – Sept 2024",
-        role: "Apinformatica",
+        company: "Fundación Educacional Estratégica",
+        timeframe: "",
+        role: "Senior Developer",
         achievements: [
-          <>
-            Developed web-based applications and designed databases to support client needs
-          </>,
-          
-                 
+          <>Desarrollo de plataformas para evaluación docente, ensayos SIMCE/PME y encuestas digitales.</>,
+          <>Automatización de informes PDF, envíos por email, SMS y reportes históricos.</>,
+          <>Modelado de datos para seguimiento académico y análisis en Power BI.</>,
         ],
+        tags: ["Education", "Power BI", "PDF", "SMS", "Email"],
         images: [
-          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/gallery/ejehab.png",
+            alt: "Education assessment project reference",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Apinformática",
+        timeframe: "",
+        role: "Developer Manager / Full Stack Developer",
+        achievements: [
+          <>Evaluación, planificación y desarrollo de soluciones empresariales con GeneXus.</>,
+          <>Trabajo en plataforma de documentos electrónicos SII, CAF, XML y DTE.</>,
+          <>Coordinación de pruebas, ambientes y soporte a usuarios finales.</>,
+        ],
+        tags: ["GeneXus", "SQL Server", "SII", "DTE"],
+        images: [
           {
             src: "/images/projects/project-01/apinformatica.jpg",
-            alt: "Once UI Project",
+            alt: "Apinformática project reference",
             width: 16,
-            height: 12,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Packing La Viña / Viña Pérez Cruz",
+        timeframe: "",
+        role: "Full Stack Developer",
+        achievements: [
+          <>Integración de sistemas productivos con PLC y SQL Server.</>,
+          <>Control de líneas de packing, etiquetas, pesos y conteo de botellas.</>,
+          <>Desarrollo de soluciones para agroindustria y manufactura.</>,
+        ],
+        tags: ["Agribusiness", "Manufacturing", "PLC Integration", "SQL Server"],
+        images: [
+          {
+            src: "/images/gallery/informe.jpg",
+            alt: "Industrial production project reference",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Experiencia internacional en Canadá",
+        timeframe: "",
+        role: "Software, operaciones y mejora de procesos",
+        achievements: [
+          <>Experiencia laboral internacional en Canadá y adaptación a entornos multiculturales.</>,
+          <>Diseño conceptual de soluciones para mantenimiento hotelero y control de actividades de ensamblaje.</>,
+          <>Aplicación de mirada técnica y operacional sobre procesos industriales reales.</>,
+        ],
+        tags: ["Canada", "Hospitality", "Manufacturing", "Operations"],
+        images: [
+          {
+            src: "/images/projects/project-01/odra.jpg",
+            alt: "Canada professional experience reference",
+            width: 16,
+            height: 9,
           },
         ],
       },
     ],
   },
-
-
- 
-
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Formación",
     institutions: [
       {
-        name: "Universidad Teconologica",
-        description: <>Studied software engineering.</>,
+        name: "Ingeniería Informática",
+        description: <>Formación profesional orientada a desarrollo de software y sistemas de información.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Aprendizaje continuo",
+        description: (
+          <>
+            Actualización permanente en tecnologías web, integración, inteligencia de negocios,
+            automatización y prácticas modernas de desarrollo.
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Competencias técnicas",
     skills: [
       {
-        title: "Languages & Frameworks",
-        description: <>React.js, Node.js, HTML, CSS, JavaScript, React Native, Genexus, C#, VB, .NET., next.js, vercel, tamagui</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          
-        ],
+        title: "Frontend y aplicaciones web",
+        description: <>React, Next.js, JavaScript, HTML, CSS, interfaces responsivas y consumo de APIs REST.</>,
+        images: [],
       },
       {
-        title: "Database Systems",
-        description: <>MySQL, SQL Server, Oracle, Transactional Design, Database Modeling.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/bd.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Backend e integración",
+        description: <>Node.js, .NET, C#, GeneXus, APIs REST, automatización de procesos e integración de sistemas.</>,
+        images: [],
       },
       {
-        title: "Tools & Platforms",
-        description: <>GitHub, Jira, Power BI, Windows Server, Excel</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Datos y business intelligence",
+        description: <>SQL Server, modelado de datos, reportería ejecutiva, Power BI y consultas para operación.</>,
+        images: [],
       },
       {
-        title: "Other Technologies",
-        description: <>WordPress (learning), WooCommerce, API Integrations, SEO, Google Analytics</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/wp.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Operación industrial",
+        description: <>Integración PLC, trazabilidad, control de producción, logística, minería, agroindustria y manufactura.</>,
+        images: [],
       },
       {
-        title: "Languages ",
-        description: <>Spanish (Fluent), English (Intermediate, A2 – Currently enrolled in advanced course)</>,
-        
+        title: "Idiomas",
+        description: <>Español fluido e inglés en desarrollo para contexto laboral en Canadá.</>,
+        images: [],
       },
-    
     ],
   },
 };
 
 const blog = {
   path: "/blog",
-  label: "Projects",
-  title: "last projects",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  label: "Blog",
+  display: false,
+  title: `Notas | ${person.name}`,
+  description: `Notas y aprendizajes profesionales de ${person.name}.`,
 };
 
 const work = {
-  path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  path: "/projects",
+  label: "Projects",
+  title: `Career Hub y proyectos | ${person.name}`,
+  description:
+    "Portafolio profesional de proyectos empresariales implementados, en desarrollo y conceptos de Remigio Andrés Andrade Vargas.",
 };
 
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: `Galería | ${person.name}`,
+  description: `Galería de referencias profesionales de ${person.name}.`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      alt: "Project reference",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/horizontal-2.jpeg",
+      alt: "Project reference",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      alt: "Project reference",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      alt: "Project reference",
       orientation: "vertical",
     },
   ],

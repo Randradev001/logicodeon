@@ -1,25 +1,40 @@
+import { ProjectsHub } from "@/components/ProjectsHub";
 import { baseURL } from "@/app/resources";
 import { about, person, work } from "@/app/resources/content";
 import { Meta, Schema } from "@/once-ui/modules";
-import { ProjectsHub } from "@/components/ProjectsHub";
+
+const keywords = [
+  "Full Stack Developer",
+  "Software Engineer",
+  "React Developer",
+  "Node.js",
+  "SQL Server",
+  "GeneXus",
+  "Power BI",
+  "Mining Software",
+  "Enterprise Software",
+  "Chile",
+  "Canada",
+];
 
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
     description: work.description,
-    baseURL: baseURL,
+    baseURL,
     image: `${baseURL}/og?title=${encodeURIComponent(work.title)}`,
-    path: "/work",
+    path: work.path,
+    keywords,
   });
 }
 
-export default function Work() {
+export default function ProjectsPage() {
   return (
     <>
       <Schema
         as="webPage"
         baseURL={baseURL}
-        path="/work"
+        path={work.path}
         title={work.title}
         description={work.description}
         image={`${baseURL}/og?title=${encodeURIComponent(work.title)}`}
